@@ -26,7 +26,7 @@ export default function AddCarouselPage() {
   const addCarouselItem = useMutation(api.carousel.addCarousel);
 
   const compressionOptions = {
-    maxSizeMB: 0.2, // 200KB (ideal for fast loading)
+    maxSizeMB: 0.1, // 100KB (ideal for fast loading)
     maxWidthOrHeight: 1200, // Resizes to 1200px width/height
     fileType: "image/webp", // Converts to WebP (smaller than JPEG/PNG)
     initialQuality: 0.8, // 80% quality (visually good)
@@ -46,7 +46,7 @@ export default function AddCarouselPage() {
       const url = await imageCompression.getDataUrlFromFile(compressedFile);
       setPreviewUrl(url);
 
-      toast.info("Image optimized for web (reduced to 200KB)");
+      toast.info("Image optimized for web (reduced to 100KB)");
     } catch (error) {
       setCompressionError(true);
       toast.error("Failed to compress image");
