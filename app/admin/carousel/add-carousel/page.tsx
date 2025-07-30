@@ -27,7 +27,7 @@ export default function AddCarouselPage() {
 
   const compressionOptions = {
     maxSizeMB: 0.1, // 100KB (ideal for fast loading)
-    maxWidthOrHeight: 1200, // Resizes to 1200px width/height
+    maxWidthOrHeight: 1020, // Resizes to 1200px width/height
     fileType: "image/webp", // Converts to WebP (smaller than JPEG/PNG)
     initialQuality: 0.8, // 80% quality (visually good)
     useWebWorker: true, // Faster processing
