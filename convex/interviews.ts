@@ -124,19 +124,27 @@ export const updateInterview = mutation({
   },
 });
 
+// convex/interviews.ts
 export const deleteInterview = mutation({
   args: { id: v.id("interviews") },
   handler: async (ctx, args) => {
     const interview = await ctx.db.get(args.id);
-    if (!interview) {
-      throw new Error("Interview not found");
-    }
+    if (!interview) return; // Silently fail if interview doesn't exist
 
-    if (interview.imageId) {
-      await ctx.storage.delete(interview.imageId);
-    }
-
+    // Proceed with deletion even if image is missing
     await ctx.db.delete(args.id);
+    
+    // Attempt to delete image but don't fail if it's already gone
+    if (interview.imageId) {
+      try {
+        const url = await ctx.storage.getUrl(interview.imageId);
+        if (url) {
+          await ctx.storage.delete(interview.imageId);
+        }
+      } catch (error) {
+        console.warn("Image deletion failed (may already be deleted):", error);
+      }
+    }
   },
 });
 
