@@ -140,21 +140,21 @@ const AddInterviewPage = () => {
   };
 
   return (
-    <div className='min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8'>
+    <div className='min-h-screen p-4 sm:p-6 lg:p-8'>
       <div className='max-w-3xl mx-auto'>
-        <h1 className='text-3xl font-bold text-gray-900 mb-8 text-center'>
+        <h1 className='text-3xl font-bold mb-8 text-center'>
           Add New Interview
         </h1>
         <form
           onSubmit={handleSubmit}
-          className='space-y-6 bg-white p-6 rounded-xl shadow-lg'>
+          className='space-y-6  bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg'>
           <section className='space-y-6'>
-            <h2 className='text-xl font-semibold text-gray-700 border-b pb-2'>
+            <h2 className='text-xl font-semibold border-b pb-2'>
               Basic Information
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
               <div className='space-y-2'>
-                <Label htmlFor='name' className='text-gray-600'>
+                <Label htmlFor='name' className='text-muted-foreground'>
                   Name of Interviewee
                 </Label>
                 <Input
@@ -168,7 +168,7 @@ const AddInterviewPage = () => {
                 />
               </div>
               <div className='space-y-2'>
-                <Label htmlFor='position' className='text-gray-600'>
+                <Label htmlFor='position' className='text-muted-foreground'>
                   Position
                 </Label>
                 <Input
@@ -182,7 +182,7 @@ const AddInterviewPage = () => {
                 />
               </div>
               <div className='space-y-2'>
-                <Label htmlFor='title' className='text-gray-600'>
+                <Label htmlFor='title' className='text-muted-foreground'>
                   Interview Title
                 </Label>
                 <Input
@@ -196,7 +196,7 @@ const AddInterviewPage = () => {
                 />
               </div>
               <div className='space-y-2'>
-                <Label htmlFor='category' className='text-gray-600'>
+                <Label htmlFor='category' className='text-muted-foreground'>
                   Category
                 </Label>
                 <Input
@@ -210,7 +210,7 @@ const AddInterviewPage = () => {
                 />
               </div>
               <div className='space-y-2'>
-                <Label className='text-gray-600'>Interview Date</Label>
+                <Label className='text-muted-foreground'>Interview Date</Label>
                 <Popover open={open} onOpenChange={setOpen}>
                   <PopoverTrigger asChild>
                     <Button
@@ -237,7 +237,7 @@ const AddInterviewPage = () => {
               </div>
             </div>
             <div className='space-y-2'>
-              <Label htmlFor='excerpt' className='text-gray-600'>
+              <Label htmlFor='excerpt' className='text-muted-foreground'>
                 Excerpt
               </Label>
               <Input
@@ -251,7 +251,7 @@ const AddInterviewPage = () => {
               />
             </div>
             <div className='space-y-2'>
-              <Label className='text-gray-600'>Interviewee Photo</Label>
+              <Label className='text-muted-foreground'>Interviewee Photo</Label>
               {compressionError && (
                 <Alert variant='destructive' className='mb-4'>
                   <AlertCircle className='h-4 w-4' />
@@ -288,11 +288,11 @@ const AddInterviewPage = () => {
             </div>
           </section>
           <section className='space-y-6'>
-            <h2 className='text-xl font-semibold text-gray-700 border-b pb-2'>
+            <h2 className='text-xl font-semibold border-b pb-2'>
               Interview Content
             </h2>
             <div className='space-y-2'>
-              <Label className='text-gray-600'>Full Content</Label>
+              <Label className='text-muted-foreground'>Full Content</Label>
               <RichTextEditor
                 value={formData.content}
                 onChange={handleContentChange}
