@@ -118,13 +118,14 @@ export default function AddNewArticlePage() {
                 </div>
 
                 <div className='space-y-1.5'>
-                  <Label htmlFor='category'>Category *</Label>
+                  <Label htmlFor='category'>Category * (max. 15 characters)</Label>
                   <Input
                     id='category'
                     name='category'
                     value={formData.category}
                     onChange={handleInputChange}
                     required
+                    maxLength={15}
                   />
                 </div>
 
