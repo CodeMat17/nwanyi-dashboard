@@ -26,7 +26,7 @@ export default function Home() {
         <div className='flex justify-center'>
           <Button variant={"outline"} asChild size={"lg"}className="mr-3">
             {isSignedIn ? (
-              <Link href='/admin'>Go to Dashboard</Link>
+              <Link href='/admin/carousel'>Go to Dashboard</Link>
             ) : (
               <Link href='/sign-in'>Sign in</Link>
             )}
