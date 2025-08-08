@@ -1,10 +1,13 @@
-'use client'
+"use client";
 
+import { Button } from "@/components/ui/button";
+import { useAuth, UserButton } from "@clerk/nextjs";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const { isSignedIn } = useAuth();
+
   return (
     <div className='min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-amber-50 to-white dark:from-gray-900 dark:to-gray-800 p-6'>
       <motion.div
@@ -21,12 +24,16 @@ export default function Home() {
           community.
         </p>
         <div className='flex justify-center'>
-       
-          <Link href='/admin/carousel'>
-            <Button variant='outline' size='lg'>
-              Admin Dashboard
-            </Button>
-          </Link>
+          <Button variant={"outline"} asChild size={"lg"}className="mr-3">
+            {isSignedIn ? (
+              <Link href='/admin'>Go to Dashboard</Link>
+            ) : (
+              <Link href='/sign-in'>Sign in</Link>
+            )}
+          </Button>
+        
+            <UserButton />
+         
         </div>
       </motion.div>
     </div>

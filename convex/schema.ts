@@ -115,4 +115,19 @@ export default defineSchema({
     image: v.string(), // URL of the image
     imageId: v.id("_storage"), // Storage ID for the image
   }).index("by_imageId", ["imageId"]),
+
+  nominations: defineTable({
+    nominator: v.object({
+      fullName: v.string(),
+      email: v.string(),
+      phone: v.string(),
+    }),
+    nominee: v.object({
+      fullName: v.string(),
+      title: v.string(),
+      email: v.string(),
+      phone: v.string(),
+      reason: v.string(),
+    }),
+  }),
 });

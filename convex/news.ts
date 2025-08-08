@@ -27,6 +27,24 @@ export const getFeatured = query({
       .query("news")
       .withIndex("by_featured", (q) => q.eq("featured", true))
       .order("desc")
+      .first();
+  },
+});
+
+export const getNonFeatured = query({
+  args: {},
+  handler: async (ctx) => {
+    const featured = await ctx.db
+      .query("news")
+      .withIndex("by_featured", (q) => q.eq("featured", true))
+      .order("desc")
+      .first();
+
+    // Get all articles except the current featured one
+    return await ctx.db
+      .query("news")
+      .filter((q) => q.neq(q.field("_id"), featured?._id))
+      .order("desc")
       .collect();
   },
 });

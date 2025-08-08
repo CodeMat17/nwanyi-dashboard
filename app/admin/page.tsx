@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Calendar, Image, Newspaper, Users } from "lucide-react";
+import { Calendar, Images, Newspaper, Users } from "lucide-react";
 
 
 export default function AdminDashboard() {
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
         <Card>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
             <CardTitle className='text-sm font-medium'>Gallery Items</CardTitle>
-            <Image className='h-4 w-4 text-muted-foreground' />
+            <Images className='h-4 w-4 text-muted-foreground' />
           </CardHeader>
           <CardContent>
             <div className='text-2xl font-bold'>128</div>

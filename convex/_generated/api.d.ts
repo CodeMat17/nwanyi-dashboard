@@ -18,6 +18,7 @@ import type * as carousel from "../carousel.js";
 import type * as gallery from "../gallery.js";
 import type * as interviews from "../interviews.js";
 import type * as news from "../news.js";
+import type * as nominations from "../nominations.js";
 import type * as partners from "../partners.js";
 import type * as schedule from "../schedule.js";
 import type * as speakers from "../speakers.js";
@@ -37,6 +38,7 @@ declare const fullApi: ApiFromModules<{
   gallery: typeof gallery;
   interviews: typeof interviews;
   news: typeof news;
+  nominations: typeof nominations;
   partners: typeof partners;
   schedule: typeof schedule;
   speakers: typeof speakers;

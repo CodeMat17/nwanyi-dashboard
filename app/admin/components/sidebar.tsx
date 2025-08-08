@@ -1,5 +1,5 @@
+
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
   LayoutDashboard,
   Image,
@@ -9,6 +9,7 @@ import {
   Handshake,
   Logs,
   MicVocal,
+  User,
 } from "lucide-react";
 
 const navItems = [
@@ -20,6 +21,7 @@ const navItems = [
   { name: "Speakers", href: "/admin/speakers", icon: MicVocal },
   { name: "Gallery", href: "/admin/gallery", icon: Image },
   { name: "News", href: "/admin/news", icon: Newspaper },
+  { name: "Nominations", href: "/admin/nominations", icon: User },
 ];
 
 export function Sidebar() {
@@ -43,6 +45,7 @@ export function Sidebar() {
               </Link>
             ))}
           </nav>
+        
         </div>
         {/* <form
           action={async () => {
@@ -50,11 +53,13 @@ export function Sidebar() {
             await signOut();
           }}
           className='px-4 pb-4'> */}
-          <Button
+     
+          {/* <Button
             variant='ghost'
             className='w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'>
             <span>Sign out</span>
-          </Button>
+        </Button> */}
+      
         {/* </form> */}
       </div>
     </div>

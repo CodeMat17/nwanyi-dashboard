@@ -11,6 +11,7 @@ import {
   Handshake,
   Logs,
   MicVocal,
+  User,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -25,6 +26,7 @@ const navItems = [
   { name: "Speakers", href: "/admin/speakers", icon: MicVocal },
   { name: "Gallery", href: "/admin/gallery", icon: Image },
   { name: "News", href: "/admin/news", icon: Newspaper },
+  { name: "Nominations", href: "/admin/nominations", icon: User },
 ];
 
 type Props = {
